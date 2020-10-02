@@ -22,7 +22,6 @@ app.use(cors());
 
 
 app.post('/signin', (req,res)=> {
-	// console.log(bcrypt.compareSync("1234", '$2a$10$GS1sGQqwCW1/KqcWAchefeRnRFPcH2VFaUSoG2mWBuQ/QP5LwUtEu'));
 	db.select('email', 'hash').from('login')
 		.where('email', '=', req.body.email)
 		.then(loginInfo => {
